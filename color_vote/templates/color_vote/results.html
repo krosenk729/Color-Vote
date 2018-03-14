@@ -1,0 +1,73 @@
+{% load static %}
+<html lang="en">
+<head>
+    <title>Color Likenatorizer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<div class="content_section">
+    <h1>Color Likenatorizer</h1>
+
+    {% if words.count == 0 %}
+    <p><i>There are no words in the database.</i></p>
+    {% else %}
+    <table>
+        <tr>
+            <th colspan="2">Color</th>
+            <th>Favorite?</th>
+        </tr>
+        {% for color in colors %} {# No colon after "colors" #}
+        <tr>
+            <td style="background-color: {{ color.name }};" class="td__color_color">{{ color.name }}</td>
+            <td class="td__color_name">{{ color.name }}</td>
+
+            <!--it seems that the id="toggle_color_like_cell" is an anchor so the color_ajax_like.js will base on that to send the response from server-->
+            <!--data-color_id is use to send input data to color_ajax_like.js-->
+            <td id="toggle_color_like_cell_{{ color.id }}" class="td__toggle_color_like_button"
+                data-color_id="{{ color.id }}">
+                {% include "color_liker/color_liker/color_like_link__html_snippet.txt" %}
+
+
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+<script type='text/javascript' src="{% static 'jquery-1.11.1.min.js' %}"></script>
+<script type='text/javascript'
+        src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+<script language="javascript">
+    /*
+     Before our JavaScript can be imported, the following JavaScript
+     variables need to be set from Django variables. While these
+     values could be hard-coded into the JavaScript, this allows
+     them to be centrally located.
+     */
+    //From color_liker.views.MIN_SEARCH_CHARS
+    var MIN_SEARCH_CHARS = {{MIN_SEARCH_CHARS}};
+
+    //The url to submit the search form. From color_liker.urls
+    var SUBMIT_URL = "{% url 'color_listA' %}";
+
+    /*
+     the url to toggle the like. From color_liker.urls
+
+     Since an id must be provided to the Django url, give it a
+     bogus one, then immediately lop it off (along with the
+     ending '/'). It is re-appended by the JavaScript.
+     */
+    var LIKE_URL_PRE_ID = "{% url 'toggle_color_like' color_id='999999999' %}"
+    LIKE_URL_PRE_ID = LIKE_URL_PRE_ID.substring(0, LIKE_URL_PRE_ID.length - "999999999/".length);
+</script>
+<script type='text/javascript' src="{% static 'color_ajax_search.js' %}"></script>
+<script type='text/javascript' src="{% static 'color_ajax_like.js' %}"></script>
+<script type='text/javascript' src="{% static 'color_ajax_main.js' %}"></script>
+
+
+<!--Try this http://stackoverflow.com/questions/28329157/what-should-data-variable-from-inner-success-ajax-be-changed-to-when-moved-->
+</body>
+</html>

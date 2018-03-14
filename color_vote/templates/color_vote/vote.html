@@ -1,0 +1,18 @@
+{% load static %}
+<html lang="en">
+<head>
+    <title>Color Likenatorizer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheet.css' %}">
+</head>
+<body>
+
+<div class="search_section">
+	<label for="color_input">What color does {{ word }} make you think of?</label>
+    <input type="color" id="color_input" name="color"/>
+    <div id="color_search_results"></div>
+</div>
+	
+</body>
+</html>
