@@ -2,15 +2,14 @@
 {% block title %}Vote: Color Likenatorizer{% endblock %}
 {% block content %}
 <div class="search_section">
-	<label for="color_input">What color does {{ word }} make you think of?</label>
-	<input type="color" id="color_input" name="color"/>
+	<label for="color_input">What color does <span class="fancy">{{ word }}</span> make you think of?</label>
 	<form action="vote/{{ word }}" method="post">
 		{% csrf_token %}
 		{{ form.as_table }}
 		<button class="btn" type="submit">Vote on Color</button>
 	</form>
 </div>
-
+{% load static %}
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script type='text/javascript' src="{% static 'vote.js' %}"></script>
+<script type='text/javascript' src="{% static "vote.js" %}"></script>
 {% endblock %}

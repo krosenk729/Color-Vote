@@ -4,6 +4,7 @@ from django.template import loader
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
+from random import randint
 
 from .models import Word, Vote
 from .forms import VoteForm
@@ -19,13 +20,14 @@ def results(request):
 	# render list
 	all_words = Word.objects.all()
 	for word in all_words:
-		votes = Vote.objects.filter(word=word)
+		word.red = word.green = word.blue = 0
+		votes = Vote.objects.all().filter(word=word)
 		l = len(votes)
 		for vote in votes:
 			word.red += int(vote.red, 16) / l
 			word.green += int(vote.green, 16) / l
 			word.blue += int(vote.blue, 16) / l
-	return render(request, 'results.html', {'words': words, 'show_nav': True})
+	return render(request, 'results.html', {'words': all_words, 'show_nav': True})
 
 def vote(request):
 	# get random word and show in template
@@ -33,7 +35,8 @@ def vote(request):
 	# on post, save color 
 	# https://stackoverflow.com/questions/22392253/using-html5-input-type-color
 	# https://github.com/wesleyllewis/PollsPythonDjangoTutorial/blob/master/polls/views.py
-	word = 'Somethings'
+	randIndex = randint(0, len(Word.objects.all())-1)
+	word = Word.objects.all()[randIndex]
 	form = VoteForm()
 	return render(request, 'vote.html', {'word': word, 'form': form, 'show_nav': True})
 
@@ -43,7 +46,7 @@ def vote_post(request, word):
 		form = VoteForm(data = request.POST)
 		if form.is_valid():
 			vote = form.save(commit=False)
-			vote.word = word
+			vote.word = Word.objects.all().filter(name=word)
 			vote.save()
 	return HttpResponseRedirect('/vote/success')
 
