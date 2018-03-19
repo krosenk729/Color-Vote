@@ -1,0 +1,19 @@
+{% load static %}
+<html lang="en">
+<head>
+    <title>{% block title %}Color Likenatorizer{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheet.css' %}">
+</head>
+<body>
+	{% if show_nav %}
+	<nav class="nav">
+		<a class="nav-link" href="{% url 'vote' %}">Vote</a>
+		<a class="nav-link" href="{% url 'results' %}">Results</a>
+	</nav>
+	{% endif %}
+	{% block content %}{% endblock %}
+</body>
+</html>

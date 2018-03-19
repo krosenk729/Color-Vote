@@ -1,4 +1,5 @@
 from django.db import models
+# from colorful.fields import RGBColorField
 
 class Word(models.Model):
 	name = models.CharField(max_length=20)
@@ -7,11 +8,11 @@ class Word(models.Model):
 		return self.name
 
 class Vote(models.Model):
-	color = models.CharField(max_length=10)
+	color = models.CharField(max_length=7)
 	word = models.ForeignKey(Word, on_delete=models.CASCADE)
 	
 	def __str__(self):
-		return self.color
+		return self.color + " " + self.word
 	
 	def red(self):
 		return self.color[1:3]

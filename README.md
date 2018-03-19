@@ -12,6 +12,7 @@
 + https://github.com/quanghuy147/ajax_demo/
 + Django Database https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-DATABASES 
 + Postgres DB as Service https://elephantsql.com/
++ Colorful https://github.com/charettes/django-colorful
 
 #### Clear Some Things 
 

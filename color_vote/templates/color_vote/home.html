@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+	<main class="d-flex">
+		<div class="half" style="flex-basis: 50%">
+			<a class="btn btn-info" href="{% url 'vote' %}">Vote</a>
+		</div>
+		<div class="half" style="flex-basis: 50%">
+			<a class="btn btn-info" href="{% url 'results' %}">Results</a>
+		</div>
+	</main>
+{% endblock %}
