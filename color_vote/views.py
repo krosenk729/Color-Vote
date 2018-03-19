@@ -46,7 +46,7 @@ def vote_post(request, word):
 		form = VoteForm(data = request.POST)
 		if form.is_valid():
 			vote = form.save(commit=False)
-			vote.word = Word.objects.all().filter(name=word)
+			vote.word = Word.objects.get(name=word)
 			vote.save()
 	return HttpResponseRedirect('/vote/success')
 

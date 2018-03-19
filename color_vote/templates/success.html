@@ -4,9 +4,6 @@
 <main class="main">
 <h1>Thank you</h1>
 </main>
-<script type="text/javascript">
-	window.setTimeout(function() {
-	     $.get("{% url 'vote' %}")
-	}, 2500);
-</script>
+{% load static %}
+<script type='text/javascript' src="{% static "success.js" %}"></script>
 {% endblock %}

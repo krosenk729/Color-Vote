@@ -1,0 +1,1 @@
+setTimeout(()=>{$(location).attr('href', '/vote')}, 2500);
