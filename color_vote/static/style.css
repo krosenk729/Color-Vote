@@ -2,3 +2,7 @@
 	font-weight: bold;
 	font-family: cursive;
 }
+
+canvas{
+	padding: 2em;
+}

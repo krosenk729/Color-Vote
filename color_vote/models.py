@@ -12,7 +12,7 @@ class Vote(models.Model):
 	word = models.ForeignKey(Word, on_delete=models.CASCADE)
 	
 	def __str__(self):
-		return self.color + " " + self.word
+		return self.color + " " + self.word.name
 	
 	def red(self):
 		return self.color[1:3]

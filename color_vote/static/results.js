@@ -2,10 +2,10 @@ $(document).ready(function(){
 	let canvases = $('canvas');
 	for(let c of canvases){
 		let _color = $(c),
-			_red = color.attr('data-red'),
-			_green = color.attr('data-green'),
-			_blue = color.attr('data-blue'), 
-			ctx = color.getContext('2d');
+			_red = _color.attr('data-red'),
+			_green = _color.attr('data-green'),
+			_blue = _color.attr('data-blue'), 
+			ctx = c.getContext('2d');
 		let myChart = new Chart(ctx, {
 			type: 'horizontalBar',
 			data: {
@@ -16,16 +16,23 @@ $(document).ready(function(){
 				}]
 			},
 			options: {
-				responsive: true,
 				scales: {
-					xAxis: [{
+					xAxes: [{
 						ticks: {
-							// beginAtZero: true
-							min: 0,
-							max: 255
-						}
+							beginAtZero:true,
+							max: 300
+						},
+						maxBarThickness: 1
 					}]
-				}
+				},
+				legend: {
+					display: false
+				},
+				elements: {
+					rectangle: {
+						borderWidth: 2
+					}
+				},
 			}
 		});
 	}

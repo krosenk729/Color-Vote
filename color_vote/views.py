@@ -24,9 +24,9 @@ def results(request):
 		votes = Vote.objects.all().filter(word=word)
 		l = len(votes)
 		for vote in votes:
-			word.red += int(vote.red, 16) / l
-			word.green += int(vote.green, 16) / l
-			word.blue += int(vote.blue, 16) / l
+			word.red += int(vote.red(), 16) / l
+			word.green += int(vote.green(), 16) / l
+			word.blue += int(vote.blue(), 16) / l
 	return render(request, 'results.html', {'words': all_words, 'show_nav': True})
 
 def vote(request):
