@@ -5,6 +5,23 @@
 1. Run `python manage.py runserver 8000`
 1. Visit http://localhost:8000/
 
+
+#### Look Before You Clone?
+Screenshots of the app
+
+_*Landing page - choose to vote or view results*_
+![landing](https://raw.githubusercontent.com/krosenk729/green-py-noumenalism/master/color_vote/static/preview-1.png)
+
+
+_*Vote page - given a random word, choose what color it makes you think of*_
+![vote](https://raw.githubusercontent.com/krosenk729/green-py-noumenalism/master/color_vote/static/preview-2.png)
+
+
+_*Results page - for each word, see swatches of votes and an analysis of how much red/green/blue is attributed to that word*_
+![results](https://raw.githubusercontent.com/krosenk729/green-py-noumenalism/master/color_vote/static/preview-3.png)
+
+
+
 #### Click Some Links
 
 + Django Humanize https://docs.djangoproject.com/en/1.7/ref/contrib/humanize/
