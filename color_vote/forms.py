@@ -8,4 +8,4 @@ class VoteForm(forms.ModelForm):
 	class Meta:
 		model = Vote
 		fields = ['color']
-		widgets = {'color': TextInput(attrs={'type': 'color'})}
+		widgets = {'color': TextInput(attrs={'type': 'color', 'value': '#7d7d7d'})}

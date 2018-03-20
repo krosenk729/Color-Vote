@@ -11,7 +11,7 @@ $(document).ready(function(){
 			data: {
 				labels: ['red', 'green', 'blue'],
 				datasets: [{
-					backgroundColor: ['#E91E63', '#4CAF50', '#03A9F4'],
+					backgroundColor: ['rgba(220, 35, 55, 0.5)', 'rgba(20, 125, 20, 0.5)', 'rgba(0, 20, 255, 0.5)'],
 					data: [_red, _green, _blue]
 				}]
 			},

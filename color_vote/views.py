@@ -2,13 +2,16 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import get_object_or_404, render
-from django.urls import reverse
-from django.views import generic
+# from django.urls import reverse
+# from django.views import generic
 from random import randint
+
+from django.views.decorators.cache import cache_page
 
 from .models import Word, Vote
 from .forms import VoteForm
 
+@cache_page(1)
 def home(request):
 	return render(request, 'home.html', {'show_nav': False})
 
@@ -21,9 +24,9 @@ def results(request):
 	all_words = Word.objects.all()
 	for word in all_words:
 		word.red = word.green = word.blue = 0
-		votes = Vote.objects.all().filter(word=word)
-		l = len(votes)
-		for vote in votes:
+		word.votes = Vote.objects.all().filter(word=word)
+		l = len(word.votes)
+		for vote in word.votes:
 			word.red += int(vote.red(), 16) / l
 			word.green += int(vote.green(), 16) / l
 			word.blue += int(vote.blue(), 16) / l

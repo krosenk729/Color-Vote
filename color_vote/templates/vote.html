@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block title %}Vote: Color Likenatorizer{% endblock %}
 {% block content %}
-<div class="search_section">
-	<label for="color_input">What color does <span class="fancy">{{ word }}</span> make you think of?</label>
+<main class="w-100 h-75 center d-flex justify-content-center align-items-center flex-column">
+	<p class="lead" aria_describes="id_color">What color does <span class="fancy">{{ word }}</span> make you think of?</p>
 	<form action="vote/{{ word }}" method="post">
 		{% csrf_token %}
-		{{ form.as_table }}
+		{{ form }}
 		<button class="btn" type="submit">Vote on Color</button>
 	</form>
-</div>
+</main>
 {% load static %}
 <script type='text/javascript' src="{% static "vote.js" %}"></script>
 {% endblock %}

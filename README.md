@@ -11,8 +11,9 @@
 + https://aliteralmind.wordpress.com/2014/09/21/jquery_django_tutorial/
 + https://github.com/quanghuy147/ajax_demo/
 + Django Database https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-DATABASES 
-+ Postgres DB as Service https://elephantsql.com/
 + Colorful https://github.com/charettes/django-colorful
++ Caching https://docs.djangoproject.com/en/dev/topics/cache/#template-fragment-caching
++ https://coderwall.com/p/97wrya/deployment-of-static-files-in-django
 
 #### Clear Some Things 
 

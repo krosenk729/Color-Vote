@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Success{% endblock %}
 {% block content %}
-<main class="main">
-<h1>Thank you</h1>
+<a class="no-decorate" href="{% url 'vote' %}">
+<main class="w-100 h-100 center d-flex justify-content-center align-items-center flex-column">
+<h1 class="display-1">Thank you</h1>
+<p class="lead loading-text fancy">...getting a new color...</p>
 </main>
+</a>
 {% load static %}
 <script type='text/javascript' src="{% static "success.js" %}"></script>
 {% endblock %}

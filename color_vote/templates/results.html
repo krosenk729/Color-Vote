@@ -1,20 +1,31 @@
 {% extends "base.html" %}
 {% block title %}Results - Color Likenatorizer{% endblock %}
 {% block content %}
-
-    {% if words.count == 0 %}
-    <p><i>There are no words in the database.</i></p>
-    {% else %}
-
-    {% for word in words %}
-    <div class="card">
-        <div class="card-body">
-            <div class="card-title">{{ word.name }}</div>
-            <canvas id="{{word.name}}" data-red="{{word.red}}" data-green="{{word.green}}" data-blue="{{word.blue}}"></canvas>
-        </div>
-    </div>
-    {% endfor %}
-    {% endif %}
+<main class="card">
+    <div class="card-body">
+        {% if words.count == 0 %}
+        <p><i>There are no words in the database.</i></p>
+        {% else %}
+        <ul class="list-group list-group-flush">
+            {% for word in words %}
+            <li class="list-group-item center">
+                <div class="w-100">
+                    <h3 class="mb-1 mt-1 text-uppercase">{{ word.name }}</h3>
+                </div>
+                <div class="w-100">
+                    {% for vote in word.votes %}
+                    <div class="color-circle" style="background-color: {{ vote.color }}">-</div>
+                    {% endfor %}
+                </div>
+                <div class="w-75 px-1 canvas-wrap">
+                  <canvas id="{{word.name}}" data-red="{{word.red}}" data-green="{{word.green}}" data-blue="{{word.blue}}"></canvas>
+              </div>
+          </li>
+          {% endfor %}
+      </ul>
+      {% endif %}
+  </div>
+</main>
 {% load static %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
 <script type='text/javascript' src="{% static "results.js" %}"></script>

@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-	<main class="d-flex">
+	<header class="fixed-header px-1 center">
+		<h1 class="display-2">Color Vote</h1>
+		<h6 class="lead">Let's Color Some Words</h6>
+	</header>
+	<main class="w-100 h-100 d-flex align-items-center center home-main">
 		<div class="half" style="flex-basis: 50%">
-			<a class="btn btn-info" href="{% url 'vote' %}">Vote</a>
+			<a class="btn btn-secondary btn-lg" href="{% url 'vote' %}">Vote</a>
 		</div>
 		<div class="half" style="flex-basis: 50%">
-			<a class="btn btn-info" href="{% url 'results' %}">Results</a>
+			<a class="btn btn-secondary btn-lg" href="{% url 'results' %}">Results</a>
 		</div>
 	</main>
 {% endblock %}
