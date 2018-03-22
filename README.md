@@ -1,38 +1,34 @@
 # green-py-noumenalism
 
-#### TL;DR DIY:
+## TL;DR DIY:
 
 1. Run `python manage.py runserver 8000`
 1. Visit http://localhost:8000/
 
 
-#### Look Before You Clone?
+## Look Before You Clone?
 Screenshots of the app
 
 _*Landing page - choose to vote or view results*_
+
 ![landing](https://raw.githubusercontent.com/krosenk729/green-py-noumenalism/master/color_vote/static/preview-1.png)
 
+***
 
 _*Vote page - given a random word, choose what color it makes you think of*_
+
 ![vote](https://raw.githubusercontent.com/krosenk729/green-py-noumenalism/master/color_vote/static/preview-2.png)
+
+***
 
 
 _*Results page - for each word, see swatches of votes and an analysis of how much red/green/blue is attributed to that word*_
+
 ![results](https://raw.githubusercontent.com/krosenk729/green-py-noumenalism/master/color_vote/static/preview-3.png)
 
 
 
-#### Click Some Links
-
-+ Django Humanize https://docs.djangoproject.com/en/1.7/ref/contrib/humanize/
-+ https://aliteralmind.wordpress.com/2014/09/21/jquery_django_tutorial/
-+ https://github.com/quanghuy147/ajax_demo/
-+ Django Database https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-DATABASES 
-+ Colorful https://github.com/charettes/django-colorful
-+ Caching https://docs.djangoproject.com/en/dev/topics/cache/#template-fragment-caching
-+ https://coderwall.com/p/97wrya/deployment-of-static-files-in-django
-
-#### Clear Some Things 
+## Clear Some Things 
 
 To run shell: `python manage.py shell`
 To reset all the things: `python manage.py flush `
@@ -44,3 +40,14 @@ python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
 ```
+
+
+## Click Some Links
+
++ Django Humanize https://docs.djangoproject.com/en/1.7/ref/contrib/humanize/
++ https://aliteralmind.wordpress.com/2014/09/21/jquery_django_tutorial/
++ https://github.com/quanghuy147/ajax_demo/
++ Django Database https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-DATABASES 
++ Colorful https://github.com/charettes/django-colorful
++ Caching https://docs.djangoproject.com/en/dev/topics/cache/#template-fragment-caching
++ https://coderwall.com/p/97wrya/deployment-of-static-files-in-django
