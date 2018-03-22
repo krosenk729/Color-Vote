@@ -25,7 +25,7 @@ SECRET_KEY = '4bua24bjvxiw2h##9yk9-th*3zn+)_*(2%uhhyh1-b@$oxc6&k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['connect4kr.pythonanywhere.com']
+ALLOWED_HOSTS = ['krosenk729.pythonanywhere.com', 'localhost']
 
 
 # Application definition
@@ -119,4 +119,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/connect4kr/green-py-noumenalism/static'
