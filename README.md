@@ -2,6 +2,11 @@
 
 ## TL;DR DIY:
 
+* You must have python v3.6+ and django 2 installed
+
+1. `git clone https://github.com/krosenk729/green-py-noumenalism.git`
+1. cd into cloned folder and run `python3 manage.py makemigrations`
+1. run `python3 manage.py migrate`
 1. Run `python manage.py runserver 8000`
 1. Visit http://localhost:8000/
 
