@@ -56,3 +56,4 @@ python manage.py runserver
 + Colorful https://github.com/charettes/django-colorful
 + Caching https://docs.djangoproject.com/en/dev/topics/cache/#template-fragment-caching
 + https://coderwall.com/p/97wrya/deployment-of-static-files-in-django
++ http://www.tangowithdjango.com/book/chapters/deploy.html

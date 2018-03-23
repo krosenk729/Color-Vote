@@ -2,8 +2,6 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import get_object_or_404, render
-# from django.urls import reverse
-# from django.views import generic
 from random import randint
 
 from django.views.decorators.cache import cache_page
