@@ -1,4 +1,4 @@
-# green-py-noumenalism
+# Django & Python Color Voting App
 
 ## TL;DR DIY:
 
